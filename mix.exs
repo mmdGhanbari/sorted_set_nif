@@ -24,8 +24,8 @@ defmodule SortedSet.MixProject do
 
   defp deps do
     [
-      {:rustler, "~> 0.22.0"},
-      {:jemalloc_info, "~> 0.3", app: false},
+      {:rustler, "~> 0.34.0"},
+      {:jemalloc_info, git: "https://github.com/mmdGhanbari/jemalloc_info.git", app: false},
       {:ex_doc, "~> 0.19", only: [:dev], runtime: false},
       {:benchee, "~> 1.0", only: [:dev]},
       {:benchee_html, "~> 1.0", only: [:dev]},
@@ -55,7 +55,16 @@ defmodule SortedSet.MixProject do
     [
       name: :sorted_set_nif,
       description: "SortedSet is a fast and efficient Rust backed sorted set.",
-      files: ["lib", "native/sorted_set_nif/Cargo.toml", "native/sorted_set_nif/README.md", "native/sorted_set_nif/src", ".formatter.exs", "README*", "LICENSE*", "mix.exs"],
+      files: [
+        "lib",
+        "native/sorted_set_nif/Cargo.toml",
+        "native/sorted_set_nif/README.md",
+        "native/sorted_set_nif/src",
+        ".formatter.exs",
+        "README*",
+        "LICENSE*",
+        "mix.exs"
+      ],
       maintainers: ["Discord Core Infrastructure"],
       licenses: ["MIT"],
       links: %{
